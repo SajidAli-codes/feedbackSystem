@@ -5,7 +5,7 @@ if (!isAdminLoggedIn()) {
     redirect('admin_login.php');
 }
 
-// Get statistics
+
 $stats = $pdo->query("SELECT * FROM vw_DashboardStats")->fetch();
 $pending_feedback = $pdo->query("SELECT COUNT(*) FROM Feedback WHERE Status = 'Pending'")->fetchColumn();
 $sentiments = $pdo->query("SELECT * FROM vw_SentimentSummary")->fetchAll();
